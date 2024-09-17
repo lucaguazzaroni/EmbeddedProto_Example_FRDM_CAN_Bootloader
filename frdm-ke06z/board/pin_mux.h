@@ -154,6 +154,9 @@ void BOARD_InitOSCPins(void);
  * @brief Configures pin routing and optionally pin electrical features.
  *
  */
+
+#define SOPT0_CLKOE_0b0 0x00u /*!<@brief Bus Clock Output Enable: Bus clock output is disabled on PTH2. */
+
 void BOARD_InitCANPins(void);
 
 /*! @name PORTB1 (number 41), J1[4]/PTB1_IRTX

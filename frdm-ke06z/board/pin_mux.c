@@ -140,6 +140,14 @@ BOARD_InitPins:
  * END ****************************************************************************************************************/
 void BOARD_InitPins(void)
 {
+	BOARD_InitLEDsPins();
+	BOARD_InitCANPins();
+
+	SIM->SOPT0 = ((SIM->SOPT0 &
+	                   /* Mask bits to zero which are setting */
+	                   (~(SIM_SOPT0_CLKOE_MASK)))
+	                  /* Bus Clock Output Enable: Bus clock output is disabled on PTH2. */
+	                  | SIM_SOPT0_CLKOE(SOPT0_CLKOE_0b0));
 }
 
 /* clang-format off */
