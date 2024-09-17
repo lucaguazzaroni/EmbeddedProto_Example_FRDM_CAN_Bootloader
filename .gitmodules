@@ -1,0 +1,4 @@
+[submodule "EmbeddedProto"]
+	path = EmbeddedProto
+	url = https://github.com/Embedded-AMS/EmbeddedProto
+	branch = 3.4.1
