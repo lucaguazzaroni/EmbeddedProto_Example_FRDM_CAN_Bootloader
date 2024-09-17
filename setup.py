@@ -114,6 +114,14 @@ def generate_source_code():
     print("Generate the source file based on netbooting.proto.", end='')
     try:
         os.chdir("EmbeddedProto")
+
+        command = ["protoc", "-I./generator", "--python_out=./generator/EmbeddedProto", 
+                   "./generator/embedded_proto_options.proto"]
+        result = subprocess.run(command, check=False, capture_output=True)
+        if result.returncode:
+            print(" [" + CRED + "Fail" + CEND + "]")
+            print(result.stderr.decode("utf-8"), end='', file=stderr)
+            exit(1)
         
         command = ["protoc", "-I../proto", "-I./generator/", "-I./generator/EmbeddedProto",
                    "--eams_out=../frdm-ke06z/generated", 
