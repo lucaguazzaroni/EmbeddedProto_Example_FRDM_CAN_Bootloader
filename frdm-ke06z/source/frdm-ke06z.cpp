@@ -19,9 +19,9 @@
 #include <CanNetbooting.hpp>
 /* TODO: insert other definitions and declarations here. */
 
-#define CAN_NODE_ID     	0x801
-#define CAN_BAUDRATE    	1000000U
-#define JUMP_ADDRESS		0x10000
+constexpr const uint32_t CAN_NODE_ID = 0x801;
+constexpr const uint32_t CAN_BAUDRATE = 1000000U;
+constexpr const uint32_t JUMP_ADDRESS = 0x10000;
 
 /*
  * @brief   Application entry point.

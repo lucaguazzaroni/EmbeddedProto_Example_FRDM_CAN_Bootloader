@@ -38,7 +38,7 @@
 #include "ProgramFlash.hpp"
 
 
-#define BUF_SIZE		(256 + 48)
+constexpr const size_t BUF_SIZE = (256 + 48); // Page size plus some overhead
 
 
 enum class NetbootingState {
